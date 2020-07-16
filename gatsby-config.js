@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: 'Personal Site',
+		title: 'Fake News Site',
 		author: 'Jere Xu',
 		imageUrl: 'xxx',
 		description: 'This is the central hub for my stuffs.',
