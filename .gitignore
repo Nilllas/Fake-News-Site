@@ -5,6 +5,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+
+# API key
+api-project-177757482859-97bd7d1ab460.json
+
 # Runtime data
 pids
 *.pid
