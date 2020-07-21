@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
 	siteMetadata: {
 		title: 'Fake News Site',
@@ -22,14 +24,24 @@ module.exports = {
 			}
 		},
 		{
-			resolve: 'gatsby-source-datocms',
+			resolve: 'gatsby-source-filesystem',
 			options: {
-				apiToken: 'bc7f97b82f42b56204d988cff450e1',
-				preview: false,
-				disableLiveReload: false,
-			},
+				name: 'gen_articles',
+				path: `${__dirname}/src/content`
+			}
 		},
+		'gatsby-transformer-remark',
 		'gatsby-transformer-sharp',
+		{
+			resolve: '@fs/gatsby-plugin-drive',
+	    options: {
+	      folderId: '1VNrFmJFyi2r-RHALFB53RHmnuVftDsCN',
+	      keyFile: path.resolve(__dirname, 'api-project-177757482859-97bd7d1ab460.json'),
+	      destination: path.join(__dirname, 'src/content'),
+	      exportGDocs: true,
+	      exportMimeType: 'text/html'
+	    }
+		},
 		'gatsby-plugin-sharp',
 		{
 			resolve: `gatsby-plugin-manifest`,
